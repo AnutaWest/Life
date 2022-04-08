@@ -4,8 +4,8 @@ import java.util.*
 
 
 class GameField(
-    val width: Int = 6,
-    val height: Int = 8,
+    val width: Int = 20,
+    val height: Int = 20,
     private val matrix: Array<Array<Boolean>> = Array(width) {Array(height) {false} }
 ) : Parcelable{
 

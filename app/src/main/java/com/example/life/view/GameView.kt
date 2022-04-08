@@ -1,4 +1,4 @@
-package com.lifegame.view
+package com.example.life.view
 
 import GameField
 import android.annotation.SuppressLint
@@ -19,14 +19,16 @@ class GameView(context: Context, attrs: AttributeSet?, defStyle: Int) : View(con
 
     private val dims = Dimensions().also {
         it.lineThick = dipToPx(resources.displayMetrics, 2)
-        it.columns = 9
-        it.rows = 20
     }
 
-    var field by Delegates.observable(GameField(9, 20)) { _,_,newValue ->
+    var field by Delegates.observable(GameField()) { _,_,newValue ->
         dims.rows = newValue.height
         dims.columns = newValue.width
         postInvalidate()
+    }
+
+    init {
+        field = field //Do not delete. It calls onChange()
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -72,8 +74,7 @@ class GameView(context: Context, attrs: AttributeSet?, defStyle: Int) : View(con
             canvas.drawRect(verticalLine, paint)
         }
 
-        val horizontalLine =
-            RectF(dims.insetX, dims.insetY, canvas.width - dims.insetX, dims.lineThick + dims.insetY)
+        val horizontalLine = RectF(dims.insetX, dims.insetY, canvas.width - dims.insetX, dims.lineThick + dims.insetY)
         canvas.drawRect(horizontalLine, paint)
         for (i in 1..cellsInAColumn) {
             horizontalLine.offset(0f, dims.cellSize + dims.lineThick)

@@ -1,4 +1,4 @@
-package com.lifegame.view
+package com.example.life.view
 
 import android.util.DisplayMetrics
 import android.util.TypedValue
@@ -11,8 +11,8 @@ fun dipToPx(metrics: DisplayMetrics, dip: Int) : Float {
 class Dimensions {
     var canvasWidth by Delegates.observable(0) { _, _, _ -> recalculate()}
     var canvasHeight by Delegates.observable(0) { _, _, _ -> recalculate()}
-    var rows by Delegates.observable(0) { _, _, _ -> recalculate()}
-    var columns by Delegates.observable(0) { _, _, _ -> recalculate()}
+    var rows by Delegates.observable(20) { _, _, _ -> recalculate()}
+    var columns by Delegates.observable(40) { _, _, _ -> recalculate()}
     var lineThick by Delegates.observable(0f) { _, _, _ -> recalculate()}
 
     var insetX = 0f

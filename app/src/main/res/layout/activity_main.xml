@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,23 +9,33 @@
 
 
 
-    <com.lifegame.view.GameView
+    <com.example.life.view.GameView
         android:id="@+id/game"
         android:layout_height="0dp"
         android:layout_width="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/startStop"/>
+        app:layout_constraintBottom_toTopOf="@id/toggle_startStop"/>
 
     <ToggleButton
-        android:id="@+id/startStop"
+        android:id="@+id/toggle_startStop"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_settings"
         app:layout_constraintBottom_toBottomOf="parent"
         android:textOff="Run"
         android:textOn="Stop"/>
+    <ImageButton
+        android:id="@+id/button_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/toggle_startStop"
+        app:layout_constraintTop_toTopOf="@id/toggle_startStop"
+        android:src="@drawable/ic_settings"
+        app:tint="@color/black"
+        android:contentDescription="Settings" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
