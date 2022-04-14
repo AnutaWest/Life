@@ -84,7 +84,7 @@ class GameView(context: Context, attrs: AttributeSet?, defStyle: Int) : View(con
 
     private fun fillGrid(canvas: Canvas) {
         val paint = Paint().also {
-            it.color = Color.GREEN
+            it.color = Color.rgb(128,197,110)
         }
         for(tileX in 0 until field.width) {
             for(tileY in 0 until field.height) {
