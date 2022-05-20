@@ -32,7 +32,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/seekbar_height"
         app:layout_constraintTop_toBottomOf="@id/label_width"
-        android:max="20"
+        android:min="4"
+        android:max="32"
         />
     <SeekBar
         android:id="@+id/seekbar_height"
@@ -41,7 +42,8 @@
         app:layout_constraintStart_toEndOf="@id/seekbar_width"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/label_height"
-        android:max="20"/>
+        android:min="4"
+        android:max="32"/>
     
     <TextView
         android:id="@+id/label_speed"
